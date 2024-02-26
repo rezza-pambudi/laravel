@@ -1,1 +1,0 @@
-<img src="https://cdnstatic.detik.com/requ/logo-requ.png" alt="logo requ" class="h-10">
