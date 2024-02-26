@@ -1,0 +1,1 @@
+<img src="https://cdnstatic.detik.com/requ/logo-pod-v3.png" alt="logo requ" class="h-8">
