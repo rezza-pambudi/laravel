@@ -53,7 +53,9 @@ class ResultResource extends Resource
 
     // public static function shouldRegisterNavigation(): bool
     // {
-    //     if (auth()->user()->can('kelola_desain'))
+    //     $cekauth = auth()->user()->can('kelola_desain');
+
+    //     if ($cekauth)
     //         return true;
     //     else
     //         return false;
