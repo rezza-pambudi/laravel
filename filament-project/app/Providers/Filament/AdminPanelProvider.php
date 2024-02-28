@@ -88,10 +88,10 @@ class AdminPanelProvider extends PanelProvider
                         ]),
                     NavigationGroup::make('Operation Management')
                         ->items([
+                            ...ResultResource::getNavigationItems(),
                             ...BrandResource::getNavigationItems(),
                             ...UserResource::getNavigationItems(),
                             ...ManageUserResource::getNavigationItems(),
-                            ...ResultResource::getNavigationItems(),
                             NavigationItem::make('Roles')
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([

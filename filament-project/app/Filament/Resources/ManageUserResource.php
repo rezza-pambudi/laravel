@@ -33,7 +33,9 @@ class ManageUserResource extends Resource
             ->schema([
                 Card::make()
                     ->schema([
-                        TextInput::make('nik')->required()->unique(ignorable: fn ($record) => $record),
+                        TextInput::make('id')->unique(ignorable: fn ($record) => $record)->hidden()->afterStateUpdated(function (?string $state, ?string $old) {
+                            $state()->update();
+                        }),
                         TextInput::make('nama')->required(),
                         TextInput::make('email')->required(),
                         Select::make('team')->options([
@@ -55,7 +57,7 @@ class ManageUserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('nik')->sortable()->searchable(),
+                TextColumn::make('id')->sortable()->searchable(),
                 TextColumn::make('nama')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('team')->sortable()->searchable()
