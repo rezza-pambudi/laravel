@@ -116,6 +116,7 @@ class AdminPanelProvider extends PanelProvider
                             ...RequestDesignResource::getNavigationItems(),
                         ]),
                 ]);
-            });
+            })
+            ->databaseNotifications();
     }
 }

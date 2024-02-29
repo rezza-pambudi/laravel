@@ -16,33 +16,10 @@ class CreateRequestDesign extends CreateRecord
     protected static string $resource = RequestDesignResource::class;
 
     protected function getCreatedNotification(): ?Notification
-{
-    return Notification::make()
-        ->success()
-        ->title('User registered')
-        ->body('The user has been created successfully.');
-}
-
-    // protected function handleRecordCreation(array $data): Model
-    // {
-    //     //insert the student
-    //     $record =  static::getModel()::create($data);
-    //     // print_r($record);
-
-    //     // Create a new Guardian model instance
-    //     $requestdesign = new RequestDesign();
-    //     $requestdesign->email = 'email';
-    //     $requestdesign->brief = value('brief');
-    //     $requestdesign->materi = value('materi');
-
-    //     // $requestdesign->id = $data['email''brief','materi'];
-
-    //     // // Assuming 'student_id' is the foreign key linking to students
-    //     $requestdesign->result_id = $record->result_id; 
-
-    //     // // Save the Guardian model to insert the data
-    //     $requestdesign->save();
-
-    //     return $record;
-    // }
+    {
+        return Notification::make()
+            ->success()
+            ->title('User registered')
+            ->body('The user has been created successfully.');
+    }
 }
