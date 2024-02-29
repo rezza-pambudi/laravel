@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use Filament\Forms;
+use App\Models\User;
 use Filament\Tables;
 use App\Models\Brand;
 use App\Models\Result;
@@ -181,6 +182,9 @@ class ResultResource extends Resource
                             ->title(title: 'lead source deleted')
                             ->body(body: 'lead source has been deleted.')
                             ->send();
+                            // ->sendToDatabase(User::whereHas('roles', function ($query) {
+                            //     $query->where('name', 'admin');
+                            // })->get());
 
                         $record->delete();
                     })
