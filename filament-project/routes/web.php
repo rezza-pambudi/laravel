@@ -18,3 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get(url:'test', function() {
+//     $recipient = auth()->user();
+
+//     \Filament\Notifications\Notification::make()
+//     ->title(title:'Sending test notification')
+//     ->sendToDatabase($recipient);
+
+//     dd('done sending');
+// })->middleware(middleware:'auth');
+

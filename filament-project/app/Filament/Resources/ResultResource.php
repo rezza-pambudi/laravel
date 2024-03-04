@@ -42,13 +42,13 @@ class ResultResource extends Resource
 
     protected static ?string $model = Result::class;
 
-    protected static ?string $modelLabel = 'Kelola Desian';
+    protected static ?string $modelLabel = 'Kelola Desain';
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-right-end-on-rectangle';
 
     protected static ?string $navigationGroup = 'Operation Management';
 
-    protected static ?string $navigationLabel = 'Kelola Desian';
+    protected static ?string $navigationLabel = 'Kelola Desain';
 
     protected static ?int $navigationSort = 32;
 
@@ -181,10 +181,10 @@ class ResultResource extends Resource
                             ->success()
                             ->title(title: 'lead source deleted')
                             ->body(body: 'lead source has been deleted.')
-                            ->send();
-                            // ->sendToDatabase(User::whereHas('roles', function ($query) {
-                            //     $query->where('name', 'admin');
-                            // })->get());
+                            ->send()
+                            ->sendToDatabase(User::whereHas('roles', function ($query) {
+                                $query->where('name', 'admin');
+                            })->get());
 
                         $record->delete();
                     })

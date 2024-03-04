@@ -30,6 +30,7 @@ use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
 use App\Filament\Resources\UserResource;
 use Filament\Pages\Dashboard;
+use Filament\Notifications\Livewire\DatabaseNotifications;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -117,6 +118,10 @@ class AdminPanelProvider extends PanelProvider
                         ]),
                 ]);
             })
-            ->databaseNotifications();
+            ->databaseNotifications()
+            ->databaseNotificationsPolling('30s');
+            DatabaseNotifications::trigger('filament.notifications.database-notifications-trigger');
     }
+
+    
 }

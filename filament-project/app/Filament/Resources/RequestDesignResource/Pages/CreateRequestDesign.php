@@ -2,15 +2,17 @@
 
 namespace App\Filament\Resources\RequestDesignResource\Pages;
 
-use App\Filament\Resources\RequestDesignResource;
-use Filament\Pages\Actions;
-use Filament\Resources\Pages\CreateRecord;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\RequestDesign;
 use App\Models\User;
-use Filament\Notifications\Notification;
-use Illuminate\Console\View\Components\Alert;
+use Filament\Pages\Actions;
+use Filament\Actions\Action;
+use App\Models\RequestDesign;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Notifications\Notification;
+use App\Filament\Resources\ResultResource;
+use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Console\View\Components\Alert;
+use App\Filament\Resources\RequestDesignResource;
 
 // use App\Models\Result;
 
@@ -18,24 +20,40 @@ class CreateRequestDesign extends CreateRecord
 {
     protected static string $resource = RequestDesignResource::class;
 
-    protected function getRedirectUrl(): string
+    protected function beforeSave(): void
     {
-        // $name = Auth::user()->name;
-        // Notification::make()
-        //     ->success()
-        //     ->title('Post Created By '.$name)
-        //     ->body('New Post Has Been Saved')
-        //     ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+        $request_design = $this->record;
 
         Notification::make()
-        ->success()
-        ->title('Murid '.$this->name. ' telah mendaftar')
-        ->sendToDatabase(User::whereHas('roles', function($query){
-            $query->where('name', 'admin');
-        })->get());
-
-        return $this->previousUrl ?? $this->getResource()::getUrl('index');
+            ->title('New Brand Created')
+            ->icon('heroicon-o-shopping-bag')
+            ->body("**New Brand {$request_design->name} created!**")
+            ->actions([
+                Action::make('View')->url(
+                    RequestDesignResource::getUrl('edit',['record'=>$request_design])
+                ),
+            ])
+            ->sendToDatabase(auth()->user());
     }
+
+    // protected function getRedirectUrl(): string
+    // {
+    //     // $name = Auth::user()->name;
+    //     // Notification::make()
+    //     //     ->success()
+    //     //     ->title('Post Created By '.$name)
+    //     //     ->body('New Post Has Been Saved')
+    //     //     ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+
+    //     Notification::make()
+    //         ->success()
+    //         ->title('Murid ' . $this->name . ' telah mendaftar')
+    //         ->sendToDatabase(User::whereHas('roles', function ($query) {
+    //             $query->where('name', 'admin');
+    //         })->get());
+
+    //     return $this->previousUrl ?? $this->getResource()::getUrl('index');
+    // }
 
     protected function getCreatedNotification(): ?Notification
     {
