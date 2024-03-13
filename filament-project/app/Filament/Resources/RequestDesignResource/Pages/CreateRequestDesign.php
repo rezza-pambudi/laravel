@@ -20,7 +20,7 @@ class CreateRequestDesign extends CreateRecord
 {
     protected static string $resource = RequestDesignResource::class;
 
-    protected function beforeSave(): void
+    protected function afterSave(): void
     {
         $request_design = $this->record;
 

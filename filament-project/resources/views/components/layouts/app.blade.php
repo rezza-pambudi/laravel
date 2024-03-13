@@ -21,7 +21,7 @@
  
     <body class="antialiased">
         {{ $slot }}
- 
+        @livewire('database-notifications')
         @livewire('notifications')
  
         @filamentScripts
