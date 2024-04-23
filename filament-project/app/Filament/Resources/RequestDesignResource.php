@@ -42,13 +42,13 @@ class RequestDesignResource extends Resource
 {
     protected static ?string $model = RequestDesign::class;
 
-    protected static ?string $modelLabel = 'Request Banner';
+    protected static ?string $modelLabel = 'Request Design';
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     protected static ?string $navigationGroup = 'Form';
 
-    protected static ?string $navigationLabel = 'Request Banner';
+    protected static ?string $navigationLabel = 'Request Desain';
 
     // protected function mutateFormDataBeforeCreate(array $data): array
     // {

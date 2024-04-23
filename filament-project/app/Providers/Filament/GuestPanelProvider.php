@@ -59,7 +59,6 @@ class GuestPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->viteTheme('resources/css/filament/guest/theme.css')
             ->databaseNotifications();
     }
 }
