@@ -1,1 +1,1 @@
-<img src="https://cdnstatic.detik.com/requ/logo-pod-v3.png" alt="logo requ" class="h-8">
+<a href="/"><img src="{{url('/images/logo/logo-ds.png')}}" alt="logo ds" class="h-8"></a>

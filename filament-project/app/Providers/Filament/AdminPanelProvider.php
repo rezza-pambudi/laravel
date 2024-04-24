@@ -52,8 +52,8 @@ class AdminPanelProvider extends PanelProvider
 
             ])
             ->font('Poppins')
-            ->favicon(url: 'https://cdnstatic.detik.com/favicon-dl.png')
-            ->darkMode(condition: true)
+            ->favicon(url: '/images/logo/favicon.png')
+            ->darkMode(condition: false)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

@@ -32,10 +32,11 @@ class GuestPanelProvider extends PanelProvider
             ->profile()
             ->sidebarCollapsibleOnDesktop(true)
             ->colors([
-                'primary' => Color::Green,
+                'primary' => Color::Purple,
             ])
             ->font('Poppins')
-            ->favicon(url: 'https://cdnstatic.detik.com/favicon-dl.png')
+            ->favicon(url: '/images/logo/favicon.png')
+            ->darkMode(condition: false)
             ->discoverResources(in: app_path('Filament/Guest/Resources'), for: 'App\\Filament\\Guest\\Resources')
             ->discoverPages(in: app_path('Filament/Guest/Pages'), for: 'App\\Filament\\Guest\\Pages')
             ->pages([

@@ -76,7 +76,7 @@ class RequestDesignResource extends Resource
                 //         MarkdownEditor::make('brief')->required(),
                 //     ])
 
-                Section::make('Selamat Datang di Form Request Design Lab')
+                Section::make('Selamat Datang di Design Smelter')
                     ->description('Silahkan isikan request design anda')
                     ->icon('heroicon-m-information-circle')
                     ->schema([
