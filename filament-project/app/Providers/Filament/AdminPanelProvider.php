@@ -48,7 +48,7 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
             ->sidebarCollapsibleOnDesktop(true)
             ->colors([
-                'primary' => Color::Green,
+                'primary' => Color::Purple,
 
             ])
             ->font('Poppins')
