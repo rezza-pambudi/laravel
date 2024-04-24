@@ -23,9 +23,11 @@
                 <a href="https://detiknetwork-salesproduct.com/">
                     <button class="flex items-center text-sm font-normal text-gray-800 hover:text-gray-900 transition duration-300">Sales Product</button>
                 </a>
-                <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">
-                    Docs
-                </button>
+                <a href="/admin/login">
+                    <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">
+                        Login Administrator
+                    </button>
+                </a>
             </div>
             <button onclick="(() => { this.closest('.group').classList.toggle('open')})()" class="flex md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
