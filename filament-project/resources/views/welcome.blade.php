@@ -23,9 +23,12 @@
                 <a href="https://detiknetwork-salesproduct.com/">
                     <button class="flex items-center text-sm font-normal text-gray-800 hover:text-gray-900 transition duration-300">Sales Product</button>
                 </a>
+                <a href="https://detiknetwork-salesproduct.com/">
+                    <button class="flex items-center text-sm font-normal text-gray-800 hover:text-gray-900 transition duration-300">Informasi</button>
+                </a>
                 <a href="/admin/login">
                     <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">
-                        Login Administrator
+                        Login Admin
                     </button>
                 </a>
             </div>
