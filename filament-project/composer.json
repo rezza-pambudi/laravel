@@ -17,6 +17,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "rickdbcn/filament-email": "^1.2",
         "spatie/laravel-permission": "^6.3"
     },
     "require-dev": {

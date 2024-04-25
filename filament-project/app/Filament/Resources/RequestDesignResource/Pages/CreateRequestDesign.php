@@ -13,6 +13,8 @@ use App\Filament\Resources\ResultResource;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Console\View\Components\Alert;
 use App\Filament\Resources\RequestDesignResource;
+use Illuminate\Notifications\Notifiable;
+
 
 // use App\Models\Result;
 
@@ -61,5 +63,21 @@ class CreateRequestDesign extends CreateRecord
             ->success()
             ->title('User registered')
             ->body('The user has been created successfully.');
+    }
+
+    use Notifiable;
+ 
+    /**
+     * Route notifications for the mail channel.
+     *
+     * @return  array<string, string>|string
+     */
+    public function routeNotificationForMail(Notification $notification): array|string
+    {
+        // Return email address only...
+        return $this->email;
+ 
+        // Return email address and name...
+        return [$this->email => $this->name];
     }
 }

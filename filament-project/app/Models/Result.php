@@ -37,4 +37,6 @@ class Result extends Model
     // {
     //     return $this->morphMany(related:Brand::class);
     // }
+
+    
 }

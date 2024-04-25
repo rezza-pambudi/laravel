@@ -44,7 +44,9 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
+            ->plugin(
+                FilamentSpatieRolesPermissionsPlugin::make()
+            )
             ->profile()
             ->sidebarCollapsibleOnDesktop(true)
             ->colors([

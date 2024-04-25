@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+// use Filament\Models\Contracts\FilamentUser;
+// use Filament\Panel;
+
 
 class User extends Authenticatable
 {
@@ -56,6 +59,11 @@ class User extends Authenticatable
     // public function User():BelongsTo
     // {
     //     return $this->belongsTo(related:User::class);
+    // }
+
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     return str_ends_with($this->email, '@detik.com') && $this->hasVerifiedEmail();
     // }
 }
 

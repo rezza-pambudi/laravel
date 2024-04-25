@@ -91,7 +91,26 @@ class RequestDesignResource extends Resource
                                     fn ($record) => 'unique:request_designs,email,'
                                         . ($record ? $record->id : 'NULL')
                                         . ',id'
-                                )->maxLength(255)->columnSpanFull(),
+                                )->maxLength(255),
+                                Select::make('designer')->searchable()->options([
+                                    'Mohon menunggu' => 'Mohon menunggu',
+                                    'Riyansyah' => 'Riyansyah',
+                                    'Naufal' => 'Naufal',
+                                    'Ferry' => 'Ferry',
+                                    'Erlangga' => 'Erlangga',
+                                    'Dimas' => 'Dimas',
+                                    'Rezza' => 'Rezza',
+                                    'Erick' => 'Erick',
+                                    'Gusthia' => 'Gusthia',
+                                    'Fuad' => 'Fuad',
+                                    'Yongki' => 'Yongki',
+                                    'Faiz' => 'Faiz',
+                                    'Indah' => 'Indah',
+                                    'Ayub' => 'Ayub',
+                                    'Rizqi' => 'Rizqi',
+                                    'Irfan' => 'Irfan',
+                                    'Qonita' => 'Qonita'
+                                ])->preload(),
                                 Select::make('brand')->required()
                                     ->relationship('brand', 'brand')
                                     ->options(Brand::all()->pluck('brand', 'brand'))
