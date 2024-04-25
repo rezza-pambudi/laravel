@@ -79,7 +79,19 @@ class ResultResource extends Resource
                             'Riyansyah' => 'Riyansyah',
                             'Naufal' => 'Naufal',
                             'Ferry' => 'Ferry',
-                            'Erlangga' => 'Erlangga'
+                            'Erlangga' => 'Erlangga',
+                            'Dimas' => 'Dimas',
+                            'Rezza' => 'Rezza',
+                            'Erick' => 'Erick',
+                            'Gusthia' => 'Gusthia',
+                            'Fuad' => 'Fuad',
+                            'Yongki' => 'Yongki',
+                            'Faiz' => 'Faiz',
+                            'Indah' => 'Indah',
+                            'Ayub' => 'Ayub',
+                            'Rizqi' => 'Rizqi',
+                            'Irfan' => 'Irfan',
+                            'Qonita' => 'Qonita'
                         ])->preload(),
                         Select::make('brand')->required()
                             ->relationship('brand', 'brand')
@@ -137,6 +149,18 @@ class ResultResource extends Resource
                         'Naufal' => 'info',
                         'Erlangga' => 'info',
                         'Ferry' => 'info',
+                        'Dimas' => 'info',
+                        'Rezza' => 'info',
+                        'Erick' => 'info',
+                        'Gusthia' => 'info',
+                        'Fuad' => 'info',
+                        'Yongki' => 'info',
+                        'Faiz' => 'info',
+                        'Indah' => 'info',
+                        'Ayub' => 'info',
+                        'Rizqi' => 'info',
+                        'Irfan' => 'info',
+                        'Qonita' => 'info'
                     }),
                 TextColumn::make('status')->sortable()->searchable()->badge()
                     ->color(fn (string $state): string => match ($state) {

@@ -159,6 +159,18 @@ class RequestDesignResource extends Resource
                         'Naufal' => 'info',
                         'Erlangga' => 'info',
                         'Ferry' => 'info',
+                        'Dimas' => 'info',
+                        'Rezza' => 'info',
+                        'Erick' => 'info',
+                        'Gusthia' => 'info',
+                        'Fuad' => 'info',
+                        'Yongki' => 'info',
+                        'Faiz' => 'info',
+                        'Indah' => 'info',
+                        'Ayub' => 'info',
+                        'Rizqi' => 'info',
+                        'Irfan' => 'info',
+                        'Qonita' => 'info'
                     }),
                 TextColumn::make('result.status')->sortable()->searchable()->label('Status')
                     ->badge()
