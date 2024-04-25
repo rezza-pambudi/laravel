@@ -18,10 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/informasi', function () {
-    return view('informasi');
-});
-
 // Route::get(url:'test', function() {
 //     $recipient = auth()->user();
 
