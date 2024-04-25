@@ -16,7 +16,7 @@ class Result extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','email', 'designer', 'status', 'brand', 'hasil', 'brief', 'materi','tipe'];
+    protected $fillable = ['id','email', 'pilih_form', 'designer', 'status', 'brand', 'hasil', 'brief', 'materi','tipe'];
 
     public function Result():HasMany
     {

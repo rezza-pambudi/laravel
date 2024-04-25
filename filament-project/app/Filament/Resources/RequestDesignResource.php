@@ -91,7 +91,15 @@ class RequestDesignResource extends Resource
                                     fn ($record) => 'unique:request_designs,email,'
                                         . ($record ? $record->id : 'NULL')
                                         . ',id'
-                                )->maxLength(255)->columnSpanFull(),
+                                )->maxLength(255),
+                                Select::make('pilih_form')
+                                    ->options([
+                                        'Banner/Ads' => 'Form Request Banner/Ads',
+                                        'Microsite' => 'Form Request Microsite',
+                                        'Creative' => 'Form Request Creative',
+                                        'Ads Developer' => 'Form Request Ads Developer',
+                                    ])->label('Pilih Form')
+                                    ->placeholder('Desain apa yang ingin anda request?'),
                                 Select::make('brand')->required()
                                     ->relationship('brand', 'brand')
                                     ->options(Brand::all()->pluck('brand', 'brand'))
@@ -148,6 +156,7 @@ class RequestDesignResource extends Resource
             ->columns([
                 TextColumn::make('result.id')->sortable()->searchable()->label('Id')->disableClick(),
                 TextColumn::make('result.brand')->sortable()->searchable()->label('Brand')->color('primary')->disableClick(),
+                TextColumn::make('result.pilih_form')->sortable()->searchable()->label('Jenis Form')->color('primary')->disableClick(),
                 TextColumn::make('result.tipe')->sortable()->searchable()->label('Tipe Request')->disableClick(),
                 TextColumn::make('result.email')->sortable()->searchable()->label('Email')->color('primary')->disableClick(),
                 TextColumn::make('result.designer')->sortable()->searchable()->label('Designer')
@@ -159,6 +168,18 @@ class RequestDesignResource extends Resource
                         'Naufal' => 'info',
                         'Erlangga' => 'info',
                         'Ferry' => 'info',
+                        'Dimas' => 'info',
+                        'Rezza' => 'info',
+                        'Erick' => 'info',
+                        'Gusthia' => 'info',
+                        'Fuad' => 'info',
+                        'Yongki' => 'info',
+                        'Faiz' => 'info',
+                        'Indah' => 'info',
+                        'Ayub' => 'info',
+                        'Rizqi' => 'info',
+                        'Irfan' => 'info',
+                        'Qonita' => 'info'
                     }),
                 TextColumn::make('result.status')->sortable()->searchable()->label('Status')
                     ->badge()
