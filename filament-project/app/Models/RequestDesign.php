@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 class RequestDesign extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'email', 'pilih_form', 'brief', 'materi', 'brand', 'tipe'];
+    protected $fillable = ['id', 'email', 'brief', 'materi', 'brand', 'tipe'];
 
     // public function user():BelongsTo
     // {
