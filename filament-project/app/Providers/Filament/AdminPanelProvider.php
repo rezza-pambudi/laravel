@@ -37,6 +37,8 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+        DatabaseNotifications::trigger('filament.notifications.database-notifications-trigger');
+        
         return $panel
             ->default()
             ->id('admin')
@@ -126,8 +128,7 @@ class AdminPanelProvider extends PanelProvider
             })
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');
-            DatabaseNotifications::trigger('filament.notifications.database-notifications-trigger');
+            
     }
 
-    
 }

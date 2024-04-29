@@ -191,12 +191,37 @@ class ResultResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make()
-                    ->successNotification(
+                    // ->successNotification(
+                    //     Notification::make()
+                    //         ->success()
+                    //         ->title('Edit Berhasil')
+                    //         ->body('Silahkan lihat update pada list'),
+                    // ),
+                    ->action(function ($data, $record) {
+                        if ($record->requestDesign()->count() > 0) {
+                            Notification::make()
+                                ->danger()
+                                ->title(title: 'Edit Berhasil')
+                                ->body(body: 'Silahkan lihat update pada list')
+                                ->send()
+                                ->sendToDatabase(User::whereHas('roles', function ($query) {
+                                    $query->where('name', 'admin');
+                                })->get());
+
+                            return;
+                        }
+
                         Notification::make()
                             ->success()
-                            ->title('Edit Berhasil')
-                            ->body('Silahkan lihat update pada list'),
-                    ),
+                            ->title(title: 'lead source deleted')
+                            ->body(body: 'lead source has been deleted.')
+                            ->send()
+                            ->sendToDatabase(User::whereHas('roles', function ($query) {
+                                $query->where('name', 'admin');
+                            })->get());
+
+                        $record->delete();
+                    }),
                 Tables\Actions\DeleteAction::make()
                     ->action(function ($data, $record) {
                         if ($record->requestDesign()->count() > 0) {
