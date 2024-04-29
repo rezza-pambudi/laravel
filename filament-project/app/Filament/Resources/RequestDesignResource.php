@@ -92,24 +92,11 @@ class RequestDesignResource extends Resource
                                         . ($record ? $record->id : 'NULL')
                                         . ',id'
                                 )->maxLength(255),
-                                Select::make('designer')->searchable()->options([
-                                    'Mohon menunggu' => 'Mohon menunggu',
-                                    'Riyansyah' => 'Riyansyah',
-                                    'Naufal' => 'Naufal',
-                                    'Ferry' => 'Ferry',
-                                    'Erlangga' => 'Erlangga',
-                                    'Dimas' => 'Dimas',
-                                    'Rezza' => 'Rezza',
-                                    'Erick' => 'Erick',
-                                    'Gusthia' => 'Gusthia',
-                                    'Fuad' => 'Fuad',
-                                    'Yongki' => 'Yongki',
-                                    'Faiz' => 'Faiz',
-                                    'Indah' => 'Indah',
-                                    'Ayub' => 'Ayub',
-                                    'Rizqi' => 'Rizqi',
-                                    'Irfan' => 'Irfan',
-                                    'Qonita' => 'Qonita'
+                                Select::make('pilih_form')->searchable()->options([
+                                    'Banner/ads' => 'Form Request Banner/ads',
+                                    'Microsite' => 'Form Request Microsite',
+                                    'Creative' => 'Form Request Creative',
+                                    'Ads Developer' => 'Form Request Ads Developer',
                                 ])->preload(),
                                 Select::make('brand')->required()
                                     ->relationship('brand', 'brand')
@@ -167,6 +154,7 @@ class RequestDesignResource extends Resource
             ->columns([
                 TextColumn::make('result.id')->sortable()->searchable()->label('Id')->disableClick(),
                 TextColumn::make('result.brand')->sortable()->searchable()->label('Brand')->color('primary')->disableClick(),
+                TextColumn::make('result.pilih_form')->sortable()->searchable()->label('Form')->disableClick(),
                 TextColumn::make('result.tipe')->sortable()->searchable()->label('Tipe Request')->disableClick(),
                 TextColumn::make('result.email')->sortable()->searchable()->label('Email')->color('primary')->disableClick(),
                 TextColumn::make('result.designer')->sortable()->searchable()->label('Designer')

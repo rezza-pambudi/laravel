@@ -74,6 +74,12 @@ class ResultResource extends Resource
                                 . ($record ? $record->id : 'NULL')
                                 . ',id'
                         ),
+                        Select::make('pilih_form')->searchable()->options([
+                            'Banner/ads' => 'Form Request Banner/Ads',
+                            'Microsite' => 'Form Request Microsite',
+                            'Creative' => 'Form Request Creative',
+                            'Ads Developer' => 'Form Request Ads Developer',
+                        ])->preload(),
                         Select::make('designer')->searchable()->options([
                             'Mohon menunggu' => 'Mohon menunggu',
                             'Riyansyah' => 'Riyansyah',
@@ -136,6 +142,7 @@ class ResultResource extends Resource
             ->columns([
                 TextColumn::make('id')->sortable()->searchable(),
                 TextColumn::make('brand')->sortable()->searchable()->label('Brand')->color('primary'),
+                TextColumn::make('pilih_form')->sortable()->searchable()->label('Form')->color('primary'),
                 TextColumn::make('tipe')->sortable()->searchable()->label('Tipe Request')
                     ->color(fn (string $state): string => match ($state) {
                         'Request Baru' => 'info',
