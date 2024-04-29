@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\Result;
-use Filament\Notifications\Notification;
 
 class ResultObserver
 {
@@ -12,10 +11,7 @@ class ResultObserver
      */
     public function created(Result $result): void
     {
-        $result = auth()->user();
-        Notification::make()
-            ->title('Saved successfully')
-            ->sendToDatabase($result);
+        //
     }
 
     /**

@@ -14,20 +14,8 @@ class CreateResult extends CreateRecord
 {
     protected static string $resource = ResultResource::class;
 
-    protected function beforeSave(): void
+    protected function afterSave(): void
     {
-        $result = $this->record;
-
-        Notification::make()
-            ->title('New Brand Created')
-            ->icon('heroicon-o-shopping-bag')
-            ->body("**New Brand {$result->name} created!**")
-            ->actions([
-                Action::make('View')->url(
-                    ResultResource::getUrl('edit',['record'=>$result])
-                ),
-            ])
-            ->sendToDatabase(auth()->user());
     }
 
     // protected function getRedirectUrl(): string

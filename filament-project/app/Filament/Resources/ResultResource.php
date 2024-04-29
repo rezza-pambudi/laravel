@@ -203,10 +203,7 @@ class ResultResource extends Resource
                                 ->danger()
                                 ->title(title: 'Edit Berhasil')
                                 ->body(body: 'Silahkan lihat update pada list')
-                                ->send()
-                                ->sendToDatabase(User::whereHas('roles', function ($query) {
-                                    $query->where('name', 'admin');
-                                })->get());
+                                ->send();
 
                             return;
                         }
@@ -236,8 +233,8 @@ class ResultResource extends Resource
 
                         Notification::make()
                             ->success()
-                            ->title(title: 'lead source deleted')
-                            ->body(body: 'lead source has been deleted.')
+                            ->title(title: 'Data Terhapus')
+                            ->body(body: 'Data telah terhapus')
                             ->send()
                             ->sendToDatabase(User::whereHas('roles', function ($query) {
                                 $query->where('name', 'admin');
