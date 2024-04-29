@@ -259,7 +259,9 @@ class RequestDesignResource extends Resource
         return [
             'index' => Pages\ListRequestDesigns::route('/'),
             // 'create' => Pages\CreateRequestDesign::route('/create'),
+            // 'view' => Pages\ViewRequestDesign::route('/{record}/view'),
             'edit' => Pages\EditRequestDesign::route('/{record}/edit'),
+            'edito' => Pages\EditRequestDesign::route('/edito'),
         ];
     }
 

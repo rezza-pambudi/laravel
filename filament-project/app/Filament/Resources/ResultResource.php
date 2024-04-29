@@ -121,6 +121,7 @@ class ResultResource extends Resource
                                 'Request Revisi' => 'Request Revisi',
                             ])->label('Tipe Request'),
                         Select::make('status')->options([
+                            'Mohon menunggu' => 'Mohon menunggu',
                             'On Progress' => 'On Progress',
                             'Done' => 'Done',
                             'Revision' => 'Revision',
@@ -267,6 +268,7 @@ class ResultResource extends Resource
         return [
             'index' => Pages\ListResults::route('/'),
             'create' => Pages\CreateResult::route('/create'),
+            // 'view' => Pages\ViewResult::route('/{record}'),
             'edit' => Pages\EditResult::route('/{record}/edit'),
         ];
     }

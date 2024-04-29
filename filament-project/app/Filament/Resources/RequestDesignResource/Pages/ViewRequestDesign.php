@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Guest\Resources\RequestDesignResource\Pages;
+namespace App\Filament\Resources\RequestDesignResource\Pages;
 
-use App\Filament\Guest\Resources\RequestDesignResource;
+use App\Filament\Resources\RequestDesignResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 

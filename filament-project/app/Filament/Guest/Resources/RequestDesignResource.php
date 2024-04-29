@@ -203,29 +203,7 @@ class RequestDesignResource extends Resource
             ]);
     }
 
-    public static function infolist(Infolist $infolist): Infolist
-    {
-        return $infolist
-            ->schema([
-                // TextEntry::make('brief')->markdown(),
-                // TextEntry::make('result')->markdown()
-                Tabs::make('Tabs')
-                    ->tabs([
-                        Tabs\Tab::make('Brief')
-                            ->schema([
-                                TextEntry::make('result.brief')->markdown()->label('')
-                            ])->label('Brief & Catatan dari pembuat request'),
-                        Tabs\Tab::make('Hasil')
-                            ->schema([
-                                TextEntry::make('result.hasil')->markdown()->label('')
-                            ])->label('Hasil'),
-                        Tabs\Tab::make('Notes')
-                            ->schema([
-                                // ...
-                            ])->label('Catatan dari designer'),
-                    ])
-            ])->columns(columns: 1);
-    }
+    
 
     public static function getRelations(): array
     {
