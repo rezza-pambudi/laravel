@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  @vite('resources/css/app.css')
+  {{-- @vite('resources/css/app.css')
   @vite('resources/css/theme.css')
-  @vite('resources/css/loopple/loopple.css')
+  @vite('resources/css/loopple/loopple.css') --}}
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  <link rel="stylesheet" href="{{asset('css/theme.css')}}">
+  <link rel="stylesheet" href="{{asset('css/loopple/loopple.css')}}">
 </head>
 <body>
     <div class="container flex flex-col mx-auto">
@@ -95,5 +98,5 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
 </body>
-@vite('resources/js/loopple.js')
+<script type="text/javascript" src="{{ asset('/js/loopple.js') }}"></script>
 </html>

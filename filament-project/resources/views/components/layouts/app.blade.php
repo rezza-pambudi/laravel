@@ -16,7 +16,7 @@
         </style>
  
         @filamentStyles
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
  
     <body class="antialiased">
@@ -25,6 +25,6 @@
         @livewire('notifications')
  
         @filamentScripts
-        @vite('resources/js/app.js')
+        <script type="text/javascript" src="{{ asset('/js/loopple.js') }}"></script>
     </body>
 </html>
