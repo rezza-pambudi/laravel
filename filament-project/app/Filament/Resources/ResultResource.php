@@ -216,8 +216,6 @@ class ResultResource extends Resource
                             ->sendToDatabase(User::whereHas('roles', function ($query) {
                                 $query->where('name', 'admin');
                             })->get());
-
-                        $record->delete();
                     }),
                 Tables\Actions\DeleteAction::make()
                     ->action(function ($data, $record) {

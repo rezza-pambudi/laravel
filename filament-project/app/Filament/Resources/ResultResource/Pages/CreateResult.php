@@ -20,25 +20,31 @@ class CreateResult extends CreateRecord
 
     // protected function getRedirectUrl(): string
     // {
-    //     // $name = Auth::user()->name;
+    //     $name = Auth::user()->name;
+    //     Notification::make()
+    //         ->success()
+    //         ->title('Request dibuat oleh '.$name)
+    //         ->body('Request Telah disimpan')
+    //         ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+
     //     // Notification::make()
     //     //     ->success()
-    //     //     ->title('Post Created By '.$name)
-    //     //     ->body('New Post Has Been Saved')
-    //     //     ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
-        
-    //     Notification::make()
-    //     ->success()
-    //     ->title('Murid '.$this->name. ' telah mendaftar')
-    //     ->sendToDatabase(User::whereHas('roles', function($query){
-    //         $query->where('name', 'admin');
-    //     })->get());
+    //     //     ->title('Murid ' . $this->name . ' telah mendaftar')
+    //     //     ->sendToDatabase(User::whereHas('roles', function ($query) {
+    //     //         $query->where('name', 'admin');
+    //     //     })->get());
 
     //     return $this->previousUrl ?? $this->getResource()::getUrl('index');
     // }
 
-    protected function getCreatedNotificationTitle(): ?string
+    protected function getSavedNotification(): ?Notification
     {
-        return 'Request Berhasil';
+        return Notification::make()
+            ->success()
+            ->title('Request disimpan')
+            ->body('Request ada telah tersimpan')
+            ->sendToDatabase(User::whereHas('roles', function ($query) {
+                $query->where('name', 'admin');
+            })->get());
     }
 }

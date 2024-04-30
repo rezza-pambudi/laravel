@@ -22,40 +22,40 @@ class CreateRequestDesign extends CreateRecord
 {
     protected static string $resource = RequestDesignResource::class;
 
-    protected function afterSave(): void
-    {
-        $request_design = $this->record;
-
-        Notification::make()
-            ->title('New Brand Created')
-            ->icon('heroicon-o-shopping-bag')
-            ->body("**New Brand {$request_design->name} created!**")
-            ->actions([
-                Action::make('View')->url(
-                    RequestDesignResource::getUrl('edit',['record'=>$request_design])
-                ),
-            ])
-            ->sendToDatabase(auth()->user());
-    }
-
-    // protected function getRedirectUrl(): string
+    // protected function afterSave(): void
     // {
-    //     // $name = Auth::user()->name;
-    //     // Notification::make()
-    //     //     ->success()
-    //     //     ->title('Post Created By '.$name)
-    //     //     ->body('New Post Has Been Saved')
-    //     //     ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+    //     $request_design = $this->record;
 
     //     Notification::make()
-    //         ->success()
-    //         ->title('Murid ' . $this->name . ' telah mendaftar')
-    //         ->sendToDatabase(User::whereHas('roles', function ($query) {
-    //             $query->where('name', 'admin');
-    //         })->get());
-
-    //     return $this->previousUrl ?? $this->getResource()::getUrl('index');
+    //         ->title('New Brand Created')
+    //         ->icon('heroicon-o-shopping-bag')
+    //         ->body("**New Brand {$request_design->name} created!**")
+    //         ->actions([
+    //             Action::make('View')->url(
+    //                 RequestDesignResource::getUrl('edit',['record'=>$request_design])
+    //             ),
+    //         ])
+    //         ->sendToDatabase(auth()->user());
     // }
+
+    protected function getRedirectUrl(): string
+    {
+        $name = Auth::user()->name;
+        Notification::make()
+            ->success()
+            ->title('Request dibuat oleh '.$name)
+            ->body('Request Telah disimpan')
+            ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+
+        // Notification::make()
+        //     ->success()
+        //     ->title('Murid ' . $this->name . ' telah mendaftar')
+        //     ->sendToDatabase(User::whereHas('roles', function ($query) {
+        //         $query->where('name', 'admin');
+        //     })->get());
+
+        return $this->previousUrl ?? $this->getResource()::getUrl('index');
+    }
 
     protected function getCreatedNotification(): ?Notification
     {
@@ -79,5 +79,16 @@ class CreateRequestDesign extends CreateRecord
  
         // Return email address and name...
         return [$this->email => $this->name];
+    }
+
+    protected function getSavedNotification(): ?Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('Request disimpan')
+            ->body('Request ada telah tersimpan')
+            ->sendToDatabase(User::whereHas('roles', function ($query) {
+                $query->where('name', 'admin');
+            })->get());
     }
 }

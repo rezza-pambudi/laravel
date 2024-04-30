@@ -30,9 +30,9 @@ class GuestPanelProvider extends PanelProvider
             ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->plugin(
-                FilamentSpatieRolesPermissionsPlugin::make()
-            )
+            // ->plugin(
+            //     FilamentSpatieRolesPermissionsPlugin::make()
+            // )
             ->profile()
             ->sidebarCollapsibleOnDesktop(true)
             ->colors([
@@ -64,7 +64,6 @@ class GuestPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->databaseNotifications()
-            ->databaseNotificationsPolling('30s');
+            ->databaseNotifications();
     }
 }
