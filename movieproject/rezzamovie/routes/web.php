@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,10 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+// Route::get('/', function () {
+//     return view('home.index');
+// });
+
 Route::get('/detail', function () {
     return view('home.detail');
 });
@@ -22,3 +27,5 @@ Route::get('/detail', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

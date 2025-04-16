@@ -14,11 +14,11 @@
                         <div id="content">
                           <div class="box">
                             <div class="head">
-                              <h2>LATEST TRAILERS</h2>
+                              <h2>Film Terbaru</h2>
                               <p class="text-right"><a href="#">See all</a></p>
                             </div>
                             <div class="movie">
-                              <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="css/images/movie1.jpg" alt="" /></a> </div>
+                              <div class="movie-image"><a href="{{ url('/detail') }}"> <span class="play"><span class="name">X-MAN</span></span> <img src="css/images/movie1.jpg" alt="" /></a> </div>
                               <div class="rating">
                                 <p>RATING</p>
                                 <div class="stars">
@@ -202,7 +202,10 @@
 ---
 
 
-
+<div id="footer">
+    <p class="lf">Copyright &copy; 2025 <a href="#">Moviesite</a> - All Rights Reserved</p>
+    <div style="clear:both;"></div>
+  </div>
         </div>
     </div>
 </div>

@@ -36,6 +36,9 @@ textarea {
 	text-indent:-4000px;
 	clear:both;
 }
+.font-nav .navbar-nav .nav-link{
+	color: #ffffff !important;
+}
 .notext {
 	font-size:0;
 	line-height:0;
@@ -83,10 +86,11 @@ h1#logo a {
 	float:left;
 	width:239px;
 	height:49px;
-	background:url('images/logo.gif') no-repeat 0 0;
+	background:url('images/logo-rezzamovie.png') no-repeat 0 0;
 	font-size:0;
 	line-height:0;
 	text-indent:-4000px;
+	background-size: contain;
 }
 .social {
 	float:right;
@@ -128,6 +132,13 @@ h1#logo a {
 }
 .social ul li a.rss {
 	background-position:-54px 0;
+}
+.navbar-img{
+	width: 244px;
+    height: 40px;
+}
+.navbar-img a img{
+	max-width: 100%;
 }
 #navigation {
 	float:right;
@@ -207,6 +218,7 @@ h1#logo a {
 }
 #main {
 	border-bottom:1px dashed #413e3e;
+	color: white;
 }
 #content {
 }
@@ -218,16 +230,20 @@ h1#logo a {
 .box .head {
 	width:980px;
 	padding-top:14px;
-	padding-bottom:11px;
+	padding-bottom:61px;
 }
 .box .head h2 {
 	float:left;
 	display:inline;
+	font-size: 10px !important;
+    color: #f2a223 !important;
+    font-weight: bold !important;
 }
 .box .movie {
 	width:152px;
 	float:left;
-	padding-right:12px;
+	/* padding-right:12px; */
+	margin-right: 10px;
 }
 .movie-image {
 	float:left;
@@ -380,3 +396,20 @@ h1#logo a {
 #footer .rf {
 	float:right;
 }
+
+/* detail */
+
+.image-detail{
+	width: 100%;
+	height: 400px;
+	background: url(images/movie1.jpg) no-repeat 0 0;
+	background-size: cover;
+}
+
+.judul h1{
+	margin: 30px 20px;
+}
+
+/* .image-detail img{
+	width: 100%;
+} */
